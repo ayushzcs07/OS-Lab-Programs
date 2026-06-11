@@ -68,6 +68,15 @@ int main() {
     for (int i = 0; i < N; i++) {
         pthread_join(ph[i], NULL);
     }
+    
+for (int i = 0; i < N; i++)
+{
+    pthread_mutex_destroy(&chopstick[i]);
+}
+
+pthread_mutex_destroy(&print_lock);
+
+
 
     return 0;
 }
